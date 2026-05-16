@@ -1,15 +1,15 @@
 {
-    'name': 'Product Kode Modal',
-    'version': '17.0.1.0.0',
+    'name': 'Kode Modal Generator',
+    'version': '17.0.1.0.1',
     'category': 'Inventory',
-    'summary': 'Tambah field Kode Modal di master produk dan POS',
+    'summary': 'Generator kode modal produk dengan cipher MOBILSEDAN dan ABCDEFGHIL',
     'depends': ['product', 'point_of_sale'],
     'data': [
         'views/product_views.xml',
     ],
     'assets': {
         'point_of_sale._assets_pos': [
-            'product_kode_modal/static/src/xml/product_info_popup.xml',
+            'kode_modal_generator/static/src/xml/product_info_popup.xml',
         ],
     },
     'installable': True,
