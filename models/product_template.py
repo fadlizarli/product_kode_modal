@@ -1,4 +1,4 @@
-from odoo import fields, models
+from odoo import models
 
 KODE_PERTAMA = {'1': 'M', '2': 'O', '3': 'B', '4': 'I', '5': 'L',  # MOBILSEDAN
                 '6': 'S', '7': 'E', '8': 'D', '9': 'A', '0': 'N'}
@@ -25,20 +25,8 @@ def _encode(price, mapping):
 class ProductTemplate(models.Model):
     _inherit = 'product.template'
 
-    kode_modal = fields.Char(string='Kode Modal')
-
     def action_generate_kode1(self):
         self.kode_modal = _encode(self.standard_price, KODE_PERTAMA)
 
     def action_generate_kode2(self):
         self.kode_modal = _encode(self.standard_price, KODE_KEDUA)
-
-
-class ProductProduct(models.Model):
-    _inherit = 'product.product'
-
-    kode_modal = fields.Char(
-        string='Kode Modal',
-        related='product_tmpl_id.kode_modal',
-        store=True,
-    )
