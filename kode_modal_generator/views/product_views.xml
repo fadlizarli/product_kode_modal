@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="product_template_form_view_kode_modal" model="ir.ui.view">
+        <field name="name">product.template.form.kode.modal</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='standard_price_uom']" position="after">
+                <div class="o_field_widget">
+                    <label for="kode_modal" string="Kode Modal"/>
+                    <div class="d-flex align-items-center gap-2 mt-1">
+                        <field name="kode_modal" style="max-width: 160px;"/>
+                        <button name="action_generate_kode1" type="object"
+                                string="MOBILSEDAN" class="btn btn-sm btn-secondary"/>
+                        <button name="action_generate_kode2" type="object"
+                                string="ABCDEFGHIL" class="btn btn-sm btn-secondary"/>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>
