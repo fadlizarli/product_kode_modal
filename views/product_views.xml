@@ -6,7 +6,17 @@
         <field name="inherit_id" ref="product.product_template_form_view"/>
         <field name="arch" type="xml">
             <xpath expr="//div[@name='standard_price_uom']" position="after">
-                <field name="kode_modal" string="Kode Modal"/>
+                <div class="o_field_widget">
+                    <label for="kode_modal" string="Kode Modal"/>
+                    <div class="o_field_widget d-flex align-items-center gap-2">
+                        <field name="kode_modal" string="Kode Modal"/>
+                        <button name="action_open_kode_modal_wizard"
+                                type="object"
+                                string="Generate"
+                                class="btn btn-sm btn-secondary"
+                                icon="fa-magic"/>
+                    </div>
+                </div>
             </xpath>
         </field>
     </record>

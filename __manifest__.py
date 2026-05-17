@@ -5,6 +5,8 @@
     'summary': 'Tambah field Kode Modal di master produk dan POS',
     'depends': ['product', 'point_of_sale'],
     'data': [
+        'security/ir.model.access.csv',
+        'views/kode_modal_wizard_views.xml',
         'views/product_views.xml',
     ],
     'assets': {

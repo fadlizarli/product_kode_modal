@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="kode_modal_wizard_form" model="ir.ui.view">
+        <field name="name">kode.modal.wizard.form</field>
+        <field name="model">kode.modal.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Generator Kode Modal">
+                <group>
+                    <group string="Input">
+                        <field name="product_tmpl_id" invisible="1"/>
+                        <field name="harga_modal"/>
+                        <field name="cipher" widget="radio"/>
+                    </group>
+                    <group string="Hasil Generate">
+                        <field name="hasil_kode1" readonly="1"
+                               string="Kode 1 (MOBILS EDAN)"/>
+                        <field name="hasil_kode2" readonly="1"
+                               string="Kode 2 (ABCDEFGHIL)"/>
+                    </group>
+                </group>
+                <footer>
+                    <button name="action_terapkan" type="object"
+                            string="Terapkan ke Produk" class="btn-primary"/>
+                    <button string="Batal" class="btn-secondary"
+                            special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_kode_modal_wizard" model="ir.actions.act_window">
+        <field name="name">Generator Kode Modal</field>
+        <field name="res_model">kode.modal.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>
